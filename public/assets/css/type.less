@@ -1,0 +1,143 @@
+@baseFontSize: 14px;
+@fontSizeLarge: @baseFontSize * 1.25;
+@fontSizeSmall: @baseFontSize * .85;
+@fontSizeMini: @baseFontSize * .75;
+@mblGreen: #00948e;
+@whoiBlue: #006B83;
+@linkColor: @mblGreen;
+
+/***Font Size Override***/
+
+.lead {
+  font-size: @baseFontSize * 1.5;
+}
+
+h1 { font-size: @baseFontSize * 2.75; } // ~38px
+h2 { font-size: @baseFontSize * 2.25; } // ~32px
+h3 { font-size: @baseFontSize * 1.75; } // ~24px
+h4 { font-size: @baseFontSize * 1.25; } // ~18px
+h5 { font-size: @baseFontSize; }
+h6 { font-size: @baseFontSize * 0.85; } // ~12px
+
+h1 small { font-size: @baseFontSize * 1.75; } // ~24px
+h2 small { font-size: @baseFontSize * 1.25; } // ~18px
+h3 small { font-size: @baseFontSize; }
+h4 small { font-size: @baseFontSize; }
+
+blockquote {
+  p {
+    font-size: @baseFontSize * 1.25;
+  }
+}
+
+#font {
+  .shorthand(@size: @baseFontSize) {
+    font-size: @size;
+  }
+  .serif(@size: @baseFontSize) {
+    #font > .shorthand(@size);
+  }
+  .sans-serif(@size: @baseFontSize) {
+    #font > .shorthand(@size);
+  }
+  .monospace(@size: @baseFontSize) {
+    #font > .shorthand(@size);
+  }
+}
+
+body {
+  font-size: @baseFontSize;
+}
+
+legend {
+  font-size: @baseFontSize * 1.5;
+}
+
+.btn {
+  font-size: @baseFontSize;
+}
+
+.btn-large {
+  font-size: @fontSizeLarge;
+}
+
+.btn-small {
+  font-size: @fontSizeSmall;
+}
+
+.btn-mini {
+  font-size: @fontSizeMini;
+}
+
+.btn-group > .popover {
+  font-size: @baseFontSize; // redeclare as part 2 of font-size inline-block hack
+}
+
+.btn-group > .btn-mini {
+  font-size: @fontSizeMini;
+}
+.btn-group > .btn-small {
+  font-size: @fontSizeSmall;
+}
+.btn-group > .btn-large {
+  font-size: @fontSizeLarge;
+}
+
+.label,
+.badge {
+  font-size: @baseFontSize * .846;
+}
+
+.input-append .dropdown-menu,
+.input-prepend .dropdown-menu {
+  font-size: @baseFontSize;
+}
+
+.pagination-large {
+  ul > li > a,
+  ul > li > span {
+    font-size: @fontSizeLarge;
+  }
+}
+
+.pagination-small {
+  ul > li > a,
+  ul > li > span {
+    font-size: @fontSizeSmall;
+  }
+}
+// Mini
+.pagination-mini {
+  ul > li > a,
+  ul > li > span {
+    font-size: @fontSizeMini;
+  }
+}
+
+/***Link Color Override***/
+
+a {
+  color: @linkColor;
+}
+
+a.thumbnail:focus {
+  border-color: @linkColor;
+}
+
+.nav-list > .active > a:focus {
+  background-color: @linkColor;
+}
+
+.nav-pills > .active > a:focus {
+  background-color: @linkColor;
+}
+
+.nav .dropdown-toggle .caret {
+  border-top-color: @linkColor;
+  border-bottom-color: @linkColor;
+}
+
+.btn-link {
+  color: @linkColor;
+}
+
